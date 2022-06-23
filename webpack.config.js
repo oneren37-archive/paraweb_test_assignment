@@ -6,14 +6,37 @@ module.exports = {
   mode: 'production',
   target: 'node',
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    main: path.resolve(__dirname, './src/index.jsx'),
   },
   output: {
     path: path.resolve(__dirname, './build'),
     filename: '[name].bundle.js',
   },
-  module: {},
-  resolve: {},
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: [
+              [
+                '@babel/plugin-transform-react-jsx',
+                {
+                  pragma: 'window.createElement',
+                  pragmaFrag: "'fragment'",
+                },
+              ],
+            ],
+            comments: false,
+          },
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   externals: [nodeExternals()],
   externalsPresets: {
     node: true,

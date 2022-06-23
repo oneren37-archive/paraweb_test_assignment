@@ -1,3 +1,13 @@
 {
-  "extends": ["airbnb-base"]
+  "extends": ["airbnb"],
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"]
+    }
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off"
+  }
 }
