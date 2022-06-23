@@ -1,0 +1,47 @@
+$small: 640px;
+
+.header {
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+
+  background-color: #FFFFFF;
+
+  &__inner {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-nav {
+    color: #888888;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    & span:not(:last-child){
+      margin-right: 40px;
+    }
+
+    @media screen and (max-width: $small) {
+      display: none
+    }
+
+    &_mobile {
+      display: none;
+
+      & img:not(:last-child){
+        margin-right: 16px;
+      }
+
+      @media screen and (max-width: $small) {
+        display: block
+      }
+    }
+  }
+}

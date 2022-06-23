@@ -1,19 +1,18 @@
-function App(props) {
-  return (
-    <div className="class">
-      <SomeComponent title={props.title} />
-    </div>
-  );
-}
+import Header from './components/Header';
+import Carousel from './components/Carousel';
+import ArticlesContainer from './components/ArticlesContainer';
+import Footer from './components/Footer';
+import './App.scss';
 
-function SomeComponent(props) {
-  return (
-    <h1 className={props.title}>
-      {' '}
-      {props.title}
-      {' '}
-    </h1>
-  );
+function App() {
+    return (
+        <div className="page">
+            <Header phone="8 800 000 00 00" email="sales@logo.ru" />
+            <Carousel />
+            <ArticlesContainer />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
