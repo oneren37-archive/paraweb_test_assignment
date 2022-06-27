@@ -12,9 +12,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "start": "node ./build/main.bundle.js",
     "build": "webpack",
-    "dev": "webpack --watch"
+    "dev": "webpack --watch",
+    "magic": "npm ci && npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
