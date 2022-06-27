@@ -34,16 +34,34 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
 
     color: #888888;
 
     margin-bottom: 24px;
 
-    overflow: hidden;
+    display: block;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    position: relative;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 !important;
+
+    height: calc(1em * 1.2 * 3);
+
+    &:after {
+      content: '';
+      text-align: right;
+      bottom: 0;
+      right: 0;
+      width: 25%;
+      display: block;
+      position: absolute;
+      height: calc(1em * 1.2);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+    }
   }
 
   &__author-label {
@@ -64,4 +82,8 @@
   }
 }
 
-
+@supports (-webkit-line-clamp: 1) {
+  .article__description:after {
+    display: none !important;
+  }
+}
