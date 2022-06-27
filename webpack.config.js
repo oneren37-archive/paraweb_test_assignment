@@ -1,14 +1,14 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    target: 'node',
+    target: ['web', 'es5'],
     entry: {
-        main: path.resolve(__dirname, './src/index.jsx'),
+        main: ['whatwg-fetch', path.resolve(__dirname, './src/index.jsx')],
     },
     output: {
+        publicPath: '',
         path: path.resolve(__dirname, './build'),
         filename: '[name].bundle.js',
     },
@@ -19,6 +19,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        presets: [
+                            [
+                                '@babel/preset-env',
+                                {
+                                    useBuiltIns: 'entry',
+                                    corejs: 3,
+                                },
+                            ],
+                        ],
                         plugins: [
                             [
                                 '@babel/plugin-transform-react-jsx',
@@ -33,7 +42,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.s?[ac]ss$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
@@ -45,7 +54,6 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
     },
-    externals: [nodeExternals()],
     externalsPresets: {
         node: true,
     },

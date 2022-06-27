@@ -19,6 +19,8 @@
     "react/jsx-props-no-spreading": "off",
     "react/no-this-in-sfc": "off",
     "no-new": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off"
   }
 }
