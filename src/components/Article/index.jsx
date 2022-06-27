@@ -6,15 +6,7 @@ const Article = (props) => {
     } = props;
 
     return (
-        <article
-            className="article"
-            style={
-                `-ms-grid-column:${
-                    props.i % 2
-                };-ms-grid-row=${
-                    props.i / 2}`
-            }
-        >
+        <article className="article">
             <span className="article__date">
                 {date.toLocaleString('ru', {
                     year: 'numeric',
