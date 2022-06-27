@@ -1,0 +1,121 @@
+.ex-slide {
+  width: 50%;
+  min-width: 600px;
+  height: 546px;
+
+  font-style: normal;
+  color: #FFFFFF;
+
+  &-wrapper {
+    position: relative;
+    background:  linear-gradient(100.68deg, #5991FF 13.6%, #0050EF 94.69%);
+
+    :before {
+      content: "";
+
+      position: absolute;
+      width: auto;
+      height: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background: url("./chel1.png") no-repeat right bottom;
+      background-size: auto 100%;
+
+      @media (max-width: 1400px) {
+        background-size: 100% auto;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 56px;
+
+    padding-top: 100px;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    padding-bottom: 32px;
+  }
+
+  &__link {
+    background: #FFFFFF;
+    border-radius: 10px;
+
+    padding: 16px 32px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    color: #0050EF;
+  }
+}
+
+@media (max-width: 920px) {
+  .ex-slide {
+    width: 70%;
+    height: 446px;
+    min-width: 400px;
+
+    &-wrapper {
+      :before {
+        background-size: 110% auto;
+      }
+    }
+
+    &__title {
+      padding-top: 50px;
+      font-size: 30px;
+      line-height: 120%;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ex-slide {
+    width: 100%;
+    height: 365px;
+    min-width: 200px;
+
+    &-wrapper {
+      :before {
+        background-size: auto 170px;
+      }
+    }
+
+    &__title {
+      padding-top: 20px;
+      font-size: 20px;
+      line-height: 120%;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 22px;
+      padding-bottom: 24px;
+    }
+
+    &__link {
+      font-size: 14px;
+      padding: 14px 24px;
+    }
+  }
+}

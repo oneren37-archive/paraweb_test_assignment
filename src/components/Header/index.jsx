@@ -1,3 +1,5 @@
+/* global document */
+import * as Stickyfill from 'stickyfilljs';
 import logo from './logo.svg';
 import phoneIcon from './phone.svg';
 import mailIcon from './mail.svg';
@@ -5,6 +7,11 @@ import './style.scss';
 
 const Header = (props) => {
     const { phone, email } = props;
+
+    setTimeout(() => {
+        const header = document.querySelector('header');
+        Stickyfill.add(header);
+    }, 0);
 
     return (
         <header className="header">

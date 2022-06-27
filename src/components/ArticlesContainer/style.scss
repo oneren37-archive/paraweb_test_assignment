@@ -1,0 +1,38 @@
+.article-wrapper {
+  padding: 20px 0 80px 0;
+
+  min-height: 70vh;
+
+  & table {
+    width: 100%;
+    border-spacing: 20px 20px;
+    margin: -20px;
+
+    & tbody {
+      width: 100%;
+
+      & td {
+        height: 1px
+      }
+    }
+  }
+}
+
+.article-container_mobile {
+  display: none
+}
+
+@media screen and (max-width: 900px) {
+  .article-wrapper {
+    & table {
+      display: none;
+    }
+  }
+  .article-container_mobile {
+    display: block;
+
+    & .article:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

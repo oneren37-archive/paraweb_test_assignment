@@ -16,6 +16,9 @@
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/anchor-has-content": "off",
     "jsx-a11y/control-has-associated-label": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-this-in-sfc": "off",
+    "no-new": "off",
     "arrow-body-style": "off"
   }
 }
